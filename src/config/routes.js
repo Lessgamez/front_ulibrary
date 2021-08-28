@@ -4,7 +4,7 @@ import LayoutAdmin from "../layouts/LayoutAdmin";
 // //admin pages
 import AdminHome from "../pages/Admin";
 // import AdminSingIn  from "../pages/Admin/SignIn";
-// import AdminUsers from "../pages/Admin/Users";
+import AdminUsers from "../pages/Admin/Users";
 
 // //PAGES
 // import Home from "../pages/Home";
@@ -28,12 +28,12 @@ const routes=[
             //     component: AdminSingIn,
             //     exact:true
             // },
-            // {
-            //     path:"/admin/users",
-            //     component: AdminUsers,
-            //     exact:true
+            {
+                path:"/admin/users",
+                component: AdminUsers,
+                exact:true
 
-            // },
+            },
             // {
             //     component:Error404
             // }

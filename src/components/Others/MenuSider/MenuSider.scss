@@ -6,3 +6,9 @@
   left: 0;
   top: 65px;
 }
+
+$myColor: red;
+
+h1 {
+  color: $myColor;
+}
