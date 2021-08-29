@@ -1,0 +1,16 @@
+.add-user-form {
+  .form-add {
+    text-align: center;
+    .ant-form-item {
+      margin-top: 5px;
+      margin-bottom: 50px;
+      i {
+        color: rgba(0, 0, 0, 255);
+      }
+    }
+
+    .btn-submit {
+      width: 100%;
+    }
+  }
+}

@@ -22,7 +22,7 @@ export default function Users(){
     
     return(
         <div className="users">
-            <h1>Lista de usuarios</h1>
+            
             <ListUsers 
             usersActives={usersActives} 
             users={users} 

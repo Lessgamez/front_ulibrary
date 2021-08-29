@@ -5,6 +5,7 @@ import LayoutAdmin from "../layouts/LayoutAdmin";
 import AdminHome from "../pages/Admin";
 // import AdminSingIn  from "../pages/Admin/SignIn";
 import AdminUsers from "../pages/Admin/Users";
+import AdminBooks from "../pages/Admin/Books";
 
 // //PAGES
 // import Home from "../pages/Home";
@@ -31,6 +32,12 @@ const routes=[
             {
                 path:"/admin/users",
                 component: AdminUsers,
+                exact:true
+
+            },
+            {
+                path:"/admin/books",
+                component: AdminBooks,
                 exact:true
 
             },
