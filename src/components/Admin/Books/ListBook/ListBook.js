@@ -109,7 +109,7 @@ function UserActive(props) {
                 deleteBookApi(book.id)
                 .then(response=>{
                     notification["success"]({
-                        message: response
+                        message: "Success"
                     });
                     setReloadBooks(true);
                 })
