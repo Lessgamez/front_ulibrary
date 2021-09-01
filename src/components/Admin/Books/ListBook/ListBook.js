@@ -100,11 +100,11 @@ function UserActive(props) {
     const showDeleteConfirm=()=>{
 
         confirm({
-            title:"Eliminando usuario",
-            content:`Estas seguro que quieres eliminar a ${book.title}`,
-            okText: "Eliminar",
+            title:"Delete Book",
+            content:`Are you sure to delete ${book.title}`,
+            okText: "Delete",
             okType: "danger",
-            cancelText: "Cancelar",
+            cancelText: "Cancel",
             onOk(){
                 deleteBookApi(book.id)
                 .then(response=>{
@@ -127,12 +127,12 @@ function UserActive(props) {
              <List.Item
                 actions={[
                   
-                    <Button
-                     type="primary"
-                     onClick={()=>editBook(book)}
-                    >
-                      <EditOutlined />
-                    </Button>,
+                    // <Button
+                    //  type="primary"
+                    //  onClick={()=>editBook(book)}
+                    // >
+                    //   <EditOutlined />
+                    // </Button>,
 
                     // <Button
                     // type="danger"

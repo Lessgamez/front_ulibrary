@@ -8,7 +8,7 @@ import {EditOutlined  ,StopOutlined ,DeleteOutlined, CheckSquareOutlined} from '
 // import EditUserForm from '../EditUserForm';
 import AddUserForm from '../AddUser';
 import './ListUsers.scss';
-// import {getAvatarApi, activateUserApi, deleteUserApi} from '../../../../api/user';
+import {deleteUserApi} from '../../../../api/user';
 // import {getAccessTokenApi} from '../../../../api/auth';
 
 const {confirm}= ModalAntd;
@@ -99,40 +99,40 @@ function UserActive(props) {
     const showDeleteConfirm=()=>{
         // const accessToken=getAccessTokenApi();
 
-        // confirm({
-        //     title:"Eliminando usuario",
-        //     content:`Estas seguro que quieres eliminar a ${user.email}`,
-        //     okText: "Eliminar",
-        //     okType: "danger",
-        //     cancelText: "Cancelar",
-        //     onOk(){
-        //         deleteUserApi(accessToken,user._id)
-        //         .then(response=>{
-        //             notification["success"]({
-        //                 message: response
-        //             });
-        //             setReloadUsers(true);
-        //         })
-        //         .catch(err=>{
-        //             notification["error"]({
-        //                 message:err
-        //             });
-        //         });
+        confirm({
+            title:"Delete User",
+            content:`Are you sure to delete ${user.name}`,
+            okText: "Delete",
+            okType: "danger",
+            cancelText: "Cancel",
+            onOk(){
+                deleteUserApi(user.id)
+                .then(response=>{
+                    notification["success"]({
+                        message: "Success"
+                    });
+                    setReloadUsers(true);
+                })
+                .catch(err=>{
+                    notification["error"]({
+                        message:err
+                    });
+                });
 
-        //      }
-        // });
+             }
+        });
     }
 
     return (
              <List.Item
                 actions={[
                   
-                    <Button
-                     type="primary"
-                     onClick={()=>editUser(user)}
-                    >
-                      <EditOutlined />
-                    </Button>,
+                    // <Button
+                    //  type="primary"
+                    //  onClick={()=>editUser(user)}
+                    // >
+                    //   <EditOutlined />
+                    // </Button>,
 
                     // <Button
                     // type="danger"

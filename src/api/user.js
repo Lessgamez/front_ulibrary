@@ -45,3 +45,27 @@ export function getUsersApi(){ //se recibe el token para validar que solo usuari
         return err.message;
     });
 }
+
+
+export function deleteUserApi(id){
+    const url=`${basePath}/user/${id}`;
+
+    const params ={
+        method: "DELETE",
+        headers:{
+            "Content-Type": "application/json",
+            
+        }
+    }
+
+    return fetch(url,params)
+    .then(response => {
+        return response.json();
+    })
+    .then(result=>{
+        return result.message;
+    })
+    .catch(err=>{
+        return err.message;
+    })
+}
