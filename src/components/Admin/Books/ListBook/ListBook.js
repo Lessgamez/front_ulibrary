@@ -5,7 +5,6 @@ import NoAvatar from '../../../../assets/png/images.png';
 
 import Modal from '../../../Others/Modal';
 import {EditOutlined  ,StopOutlined ,DeleteOutlined, CheckSquareOutlined} from '@ant-design/icons'
-// import EditUserForm from '../EditUserForm';
 import AddBookForm from '../AddBook';
 import './Listbooks.scss';
 // import {getAvatarApi, activateUserApi, deleteUserApi} from '../../../../api/user';
@@ -28,7 +27,10 @@ export default function ListBook(props){
         setModalContent(
             <AddBookForm 
             setIsVisibleModal={setIsVisibleModal}
-            setReloadBooks={setReloadBooks}/>
+            setReloadBooks={setReloadBooks}
+            setFilter={setFilter}
+            
+            />
         );
     }
 

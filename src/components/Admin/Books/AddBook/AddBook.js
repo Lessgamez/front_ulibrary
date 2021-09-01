@@ -7,7 +7,7 @@ import {UserOutlined,PlusOutlined,BarsOutlined ,BookOutlined,CalendarOutlined} f
 import './AddUserForm.scss';
 
 export default function AddBook(props){
-    const {setIsVisibleModal, setReloadUsers} = props;
+    const {setIsVisibleModal, setReloadUsers,setFilter} = props;
     const [bookData,setBookData]=useState({});
     
     const addUser=event=>{
@@ -36,7 +36,7 @@ export default function AddBook(props){
                     
                     setReloadUsers(true);
                     setBookData({});
-                    
+                    setFilter(" ")
                     setIsVisibleModal(false);
                 })
                 .catch(err=>{
