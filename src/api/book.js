@@ -45,3 +45,27 @@ export function getBooksApi(filter){ //se recibe el token para validar que solo 
         return err.message;
     });
 }
+
+
+export function deleteBookApi(id){
+    const url=`${basePath}/book/${id}`;
+
+    const params ={
+        method: "DELETE",
+        headers:{
+            "Content-Type": "application/json",
+            
+        }
+    }
+
+    return fetch(url,params)
+    .then(response => {
+        return response.json();
+    })
+    .then(result=>{
+        return result.message;
+    })
+    .catch(err=>{
+        return err.message;
+    })
+}

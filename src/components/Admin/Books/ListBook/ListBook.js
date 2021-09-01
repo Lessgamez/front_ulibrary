@@ -7,7 +7,7 @@ import Modal from '../../../Others/Modal';
 import {EditOutlined  ,StopOutlined ,DeleteOutlined, CheckSquareOutlined} from '@ant-design/icons'
 import AddBookForm from '../AddBook';
 import './Listbooks.scss';
-// import {getAvatarApi, activateUserApi, deleteUserApi} from '../../../../api/user';
+import {deleteBookApi} from '../../../../api/book';
 // import {getAccessTokenApi} from '../../../../api/auth';
 
 const {confirm}= ModalAntd;
@@ -98,30 +98,29 @@ function UserActive(props) {
     
     console.log(book);
     const showDeleteConfirm=()=>{
-        // const accessToken=getAccessTokenApi();
 
-        // confirm({
-        //     title:"Eliminando usuario",
-        //     content:`Estas seguro que quieres eliminar a ${book.email}`,
-        //     okText: "Eliminar",
-        //     okType: "danger",
-        //     cancelText: "Cancelar",
-        //     onOk(){
-        //         deletebookApi(accessToken,book._id)
-        //         .then(response=>{
-        //             notification["success"]({
-        //                 message: response
-        //             });
-        //             setReloadBooks(true);
-        //         })
-        //         .catch(err=>{
-        //             notification["error"]({
-        //                 message:err
-        //             });
-        //         });
+        confirm({
+            title:"Eliminando usuario",
+            content:`Estas seguro que quieres eliminar a ${book.title}`,
+            okText: "Eliminar",
+            okType: "danger",
+            cancelText: "Cancelar",
+            onOk(){
+                deleteBookApi(book.id)
+                .then(response=>{
+                    notification["success"]({
+                        message: response
+                    });
+                    setReloadBooks(true);
+                })
+                .catch(err=>{
+                    notification["error"]({
+                        message:err
+                    });
+                });
 
-        //      }
-        // });
+             }
+        });
     }
 
     return (
